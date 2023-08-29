@@ -11,6 +11,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 	// write your code here
         String finalEndPoint = targetURL + "/api/user";
+
         HttpURLConnection userConnection = connect(finalEndPoint, apiKey);
 
         String userResponse = getResponse(userConnection);

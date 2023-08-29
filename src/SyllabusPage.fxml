@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SyllabusPage">
+   <children>
+      <ImageView fx:id="profilePicture" fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="greetingLabel" layoutX="72.0" layoutY="27.0" text="Label" />
+      <ScrollPane layoutX="14.0" layoutY="56.0" prefHeight="327.0" prefWidth="574.0">
+        <content>
+          <AnchorPane fx:id="syllabusPane" minHeight="0.0" minWidth="0.0" prefHeight="335.0" prefWidth="555.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
