@@ -49,13 +49,13 @@ public class Main {
         String userResponse = getResponse(userConnection);
 
         return JsonToUserObject(userResponse);
-    };
+    }
 
 
     /**
      * Retrieves event details based on a target ID.
      *
-     * @param target The target ID for which event details are to be retrieved.
+     * @param Target The target ID for which event details are to be retrieved.
      * @return       An EventResponse object containing event details.
      */
     public static EventResponse getTargetSyllabi(String Target) throws Exception {

@@ -31,39 +31,58 @@ public class SyllabusPage implements Initializable {
         } else {
             profilePicture.setImage(profileImage);
         }
-        // sample data
+        /* sample data
         String[] syllabus1 = {"1", "Projects in Computer Science", "Spring", "2023", "2023-01-17", "2023-05-09"};
         String[] syllabus2 = {"2", "Projects in Computer Science 002", "Spring", "2023", "2023-01-18", "2023-05-09"};
         String[] syllabus3 = {"2", "Projects in Computer Science 003", "Spring", "2023", "2023-01-18", "2023-05-09"};
         String[] syllabus4 = {"2", "Projects in Computer Science 004", "Spring", "2023", "2023-01-18", "2023-05-09"};
 
-        String[][] syllabi = {syllabus1, syllabus2, syllabus3, syllabus4};
+        String[][] syllabi = {syllabus1, syllabus2, syllabus3, syllabus4}; */
+        Main main = new Main();
+        try {
+            SyllabusResponse syllabusResponseObject = main.getSyllabi();
+            int i = 0;
+            for (Syllabus syllabus : syllabusResponseObject.syllabi) {
+                //add additional relevant labels when they arrive
+                Label title = new Label("Course: " + syllabus.course_name);
+                Label semester = new Label("Semester: " + syllabus.course_semester + " " + syllabus.course_year);
+                Label startEndDates = new Label("Date: " + syllabus.start_date + " - " + syllabus.end_date);
+                Label discord = new Label("Discord Channel: " + syllabus.discord_channel);
+                Button selectSyllabus = new Button("Select");
 
-        for (int i = 0;i<4 /* replace with list length*/;i++) {
-            //add additional relevant labels when they arrive
-            Label title = new Label(syllabi[i][1]);
-            Label semester = new Label(syllabi[i][2] + " " + syllabi[i][3]);
-            Label startEndDates = new Label(syllabi[i][4] + " - " + syllabi[i][5]);
-            Button selectSyllabus = new Button("Select");
+                title.setWrapText(true);
+                title.setMaxWidth(200);
+                semester.setWrapText(true);
+                semester.setMaxWidth(210);
+                startEndDates.setWrapText(true);
+                startEndDates.setMaxWidth(210);
+                discord.setWrapText(true);
+                discord.setMaxWidth(210);
 
-            GridPane grid = new GridPane();
-            grid.getColumnConstraints().add(new ColumnConstraints(210));
-            grid.add(title, 0, 0);
-            grid.add(semester, 0, 1);
-            grid.add(startEndDates, 0, 2);
-            grid.add(selectSyllabus, 1, 0);
+                GridPane grid = new GridPane();
+                grid.getColumnConstraints().add(new ColumnConstraints(210));
+                grid.setVgap(10);
+                grid.add(title, 0, 0);
+                grid.add(semester, 0, 1);
+                grid.add(startEndDates, 0, 2);
+                grid.add(discord, 0, 3);
+                grid.add(selectSyllabus, 1, 0);
 
-            if (i % 2 == 0) {
-                syllabusPane.add(grid, 0, Math.floorDiv(i, 2));
-            } else {
-                syllabusPane.add(grid, 1, Math.floorDiv(i, 2));
+                if (i % 2 == 0) {
+                    syllabusPane.add(grid, 0, Math.floorDiv(i, 2));
+                } else {
+                    syllabusPane.add(grid, 1, Math.floorDiv(i, 2));
+                }
+
+                int targetIndex = i;
+                selectSyllabus.setOnAction(addEvent -> {
+
+                    selectSyllabus(targetIndex);
+                });
+                i++;
             }
-
-            int targetIndex = i;
-            selectSyllabus.setOnAction(addEvent -> {
-
-                selectSyllabus(targetIndex);
-            });
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
