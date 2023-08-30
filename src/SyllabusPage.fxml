@@ -11,9 +11,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SyllabusPage">
    <children>
-      <ImageView fx:id="profilePicture" fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="greetingLabel" layoutX="72.0" layoutY="27.0" text="Label" />
-      <ScrollPane layoutX="14.0" layoutY="56.0" prefHeight="327.0" prefWidth="574.0">
+      <ImageView fx:id="profilePicture" fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <Label fx:id="greetingLabel" layoutX="72.0" layoutY="27.0" text="Label" AnchorPane.leftAnchor="72.0" AnchorPane.topAnchor="27.0" />
+      <ScrollPane layoutX="14.0" layoutY="56.0" prefHeight="327.0" prefWidth="574.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="56.0">
         <content>
             <GridPane fx:id="syllabusPane" hgap="10.0" prefWidth="574.0" vgap="20.0">
                <columnConstraints>
