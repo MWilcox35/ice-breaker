@@ -44,6 +44,7 @@ public class Main {
      */
     public static User getUserInfo() throws Exception {
         String finalEndPoint = targetURL + "/api/user";
+
         HttpURLConnection userConnection = connect(finalEndPoint, apiKey);
         String userResponse = getResponse(userConnection);
 
