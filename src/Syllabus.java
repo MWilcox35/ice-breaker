@@ -1,4 +1,3 @@
-import java.util.List;
 
 public class Syllabus {
     public int id;
@@ -12,4 +11,9 @@ public class Syllabus {
     public String discord_channel;
 
 
+
+    @Override
+    public String toString() {
+        return "\n " + id + "- " + course_name;
+    }
 }
