@@ -16,16 +16,19 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+        //User Info
         User userObject = getUserInfo();
-
         System.out.println(userObject.toString() + "\n");
 
+        //SYLLABI Info
         SyllabusResponse syllabusResponseObject = getSyllabi();
         System.out.println("SYLLABI LIST : ");
         for (Syllabus syllabus : syllabusResponseObject.syllabi) {
             System.out.println(syllabus.toString());
         }
 
+
+        //EVENT Info
         EventResponse eventResponseObject = getTargetSyllabi("1");
         System.out.println("\n\n EVENT LIST : ");
 
