@@ -83,7 +83,12 @@ public class Main {
     }
 
 
-
+    /**
+     * Converts JSON input to a User object.
+     *
+     * @param jsonInput The JSON input to be converted.
+     * @return          An User object.
+     */
     public static User JsonToUserObject(String jsonInput) throws JsonProcessingException{
         ObjectMapper objectMapper = new ObjectMapper();
         User userObject = objectMapper.readValue(jsonInput,User.class);
